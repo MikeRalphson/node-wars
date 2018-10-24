@@ -1,13 +1,13 @@
 ## Table of Contents
 
 1. Quickstart
-2. To Dos
+2. To Do's
 
 ## Getting Started
 
 #### Clone the repo
 
-`$ git clone git@github.com:brianseitel/node-wars.git`
+`$ git clone https://github.com/brianseitel/node-wars.git`
 
 #### Install Dependencies
 
@@ -27,7 +27,7 @@ Run `$ node init.js`
 Run `# node index.js`
 
 
-## To Dos
+## To Do's
 
-* [] Player Creation
-* [] Combat
+* [ ] Player Creation
+* [ ] Combat
