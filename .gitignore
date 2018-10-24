@@ -7,4 +7,5 @@ data/traders.json
 colors.sh
 logs/
 node_modules
+npm*.log
 bower_components
