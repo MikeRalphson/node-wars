@@ -7,6 +7,10 @@ var Player   = require('../models/player');
 var Trader   = require('../models/trader');
 var fs       = require('fs');
 
+const cb = function(err, result) {
+    if (err) console.warn(err);
+};
+
 var Helper = function() {};
 
 Helper.prototype.shuffle = function(o) {
@@ -27,19 +31,19 @@ Helper.prototype.save = function(universe) {
 };
 
 Helper.prototype.savePlayer = function(player) {
-    fs.writeFile("data/player.json", JSON.stringify(player));
+    fs.writeFile("data/player.json", JSON.stringify(player),cb);
 };
 
 Helper.prototype.saveShops = function(universe) {
     fs.writeFile("data/shops.json", JSON.stringify({
         "shops": universe.shops
-    }));
+    }),cb);
 };
 
 Helper.prototype.saveTraders = function(universe) {
     fs.writeFile("data/traders.json", JSON.stringify({
         "traders": universe.traders
-    }));
+    }),cb);
 };
 
 Helper.prototype.saveMap = function(universe) {
@@ -66,11 +70,11 @@ Helper.prototype.saveMap = function(universe) {
     fs.writeFile("data/map.json", JSON.stringify({
         "nodes": nodes,
         "links": links
-    }));
+    }),cb);
 };
 
 Helper.prototype.saveUniverse = function(universe) {
-    fs.writeFile("data/universe.json", JSON.stringify(universe));
+    fs.writeFile("data/universe.json", JSON.stringify(universe), cb);
 };
 
 Helper.prototype.load = function(game) {
